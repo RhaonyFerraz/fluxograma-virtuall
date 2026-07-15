@@ -1,0 +1,170 @@
+/* Import React Flow styles (Must be at the very top for PostCSS) */
+@import '@xyflow/react/dist/style.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom styles for a premium Miro-like feel */
+
+/* React Flow customizations */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background-color: #8b5cf6; /* brand-500 */
+  border: 2px solid #ffffff;
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .react-flow__handle {
+  border: 2px solid #0f172a; /* slate-900 */
+  background-color: #a78bfa; /* brand-400 */
+}
+
+.react-flow__handle:hover {
+  width: 14px;
+  height: 14px;
+  background-color: #7c3aed;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+}
+
+.react-flow__edge-path {
+  stroke-width: 2.5;
+  transition: stroke-width 0.2s, stroke 0.2s;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 4;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke-width: 4;
+  stroke: #8b5cf6 !important;
+}
+
+.react-flow__controls {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: row !important;
+}
+
+.dark .react-flow__controls {
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  background: rgba(15, 23, 42, 0.8) !important;
+}
+
+.react-flow__controls-button {
+  border: none !important;
+  border-bottom: none !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+  background: transparent !important;
+  fill: #475569 !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.dark .react-flow__controls-button {
+  border-right: 1px solid rgba(51, 65, 85, 0.5) !important;
+  fill: #cbd5e1 !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+.dark .react-flow__controls-button:hover {
+  background-color: rgba(30, 41, 59, 0.9) !important;
+}
+
+.react-flow__minimap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(12px);
+  margin: 15px !important;
+}
+
+.dark .react-flow__minimap {
+  border: 1px solid rgba(51, 65, 85, 0.5) !important;
+  background: rgba(15, 23, 42, 0.7) !important;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dark .glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glow effects */
+.glow-brand {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.glow-brand-active {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Resizer styles */
+.react-flow__node-resizer {
+  border-color: #8b5cf6 !important;
+}
+.react-flow__node-resizer .react-flow__resize-handle {
+  background-color: #ffffff !important;
+  border: 2px solid #8b5cf6 !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 2px !important;
+}
